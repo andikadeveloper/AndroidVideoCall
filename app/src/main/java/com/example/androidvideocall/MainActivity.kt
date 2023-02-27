@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         binding.btnJoinVideoCall.setOnClickListener {
             navigateToVideoCall()
         }
+
+        supportActionBar?.hide()
     }
 
     private fun navigateToVideoCall() {

@@ -51,6 +51,7 @@ class VideoCallActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.initBinding()
+        supportActionBar?.hide()
     }
 
     private fun ActivityVideoCallBinding.initBinding() {
@@ -62,6 +63,10 @@ class VideoCallActivity : AppCompatActivity() {
 
         imgLeaveCall.setOnClickListener {
             leaveChannel()
+        }
+
+        imgSwitchCamera.setOnClickListener {
+            agoraEngine?.switchCamera()
         }
     }
 
