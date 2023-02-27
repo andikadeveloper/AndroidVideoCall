@@ -18,10 +18,6 @@ class VideoCallActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityVideoCallBinding
 
-    private val appId = "bd7b75448cde47899df88d98476ed950"
-    private val channelName = "test"
-    private val token = "007eJxTYPDj9xb5tqKasTO188S6lSVq+SIPJpWXZF6rzvr5oMg3dIcCQ1KKeZK5qYmJRXJKqom5haVlSpqFRYqlhYm5WWqKpalBw8s/yQ2BjAwWdy0ZGRkgEMRnYShJLS5hYAAAVyUgNg=="
-
     private var agoraEngine: RtcEngine? = null
 
     private var localSurfaceView: SurfaceView? = null
@@ -73,7 +69,7 @@ class VideoCallActivity : AppCompatActivity() {
         try {
             val config = RtcEngineConfig()
             config.mContext = baseContext
-            config.mAppId = appId
+            config.mAppId = BuildConfig.AGORA_APP_ID
             config.mEventHandler = mRtcEventHandler
             agoraEngine = RtcEngine.create(config)
 
@@ -123,7 +119,7 @@ class VideoCallActivity : AppCompatActivity() {
 
         agoraEngine?.startPreview()
 
-        agoraEngine?.joinChannel(token, channelName, 0, options)
+        agoraEngine?.joinChannel(BuildConfig.AGORA_TOKEN, BuildConfig.AGORA_CHANNEL_NAME, 0, options)
     }
 
     private fun leaveChannel() {

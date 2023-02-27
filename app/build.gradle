@@ -15,6 +15,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "AGORA_APP_ID", "\"$agoraAppId\"")
+        buildConfigField("String", "AGORA_CHANNEL_NAME", "\"$agoraChannelName\"")
+        buildConfigField("String", "AGORA_TOKEN", "\"$agoraToken\"")
     }
 
     buildFeatures {
