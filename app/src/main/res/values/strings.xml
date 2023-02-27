@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AndroidVideoCall</string>
     <string name="label_leave_video_call">Leave Video Call</string>
+    <string name="label_join_video_call">Join Video Call</string>
 </resources>
